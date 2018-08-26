@@ -1,0 +1,6 @@
+Official language programmers:
+    Gabriel Julio dos Santos [Interpreter/Parser/API Programming & Idealization]
+    Vinicius de Oliveira Teles [IDE & Lib Developer]
+    Walter Dalla Torre Neto [Lib Developer]
+
+Bug Reports:

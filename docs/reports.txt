@@ -1,0 +1,6 @@
+Skef wanna be an "out of bugs" language, so yours developers work hard on it to make it happen.
+But not everything is perfect, so bugs can happen sometimes.
+If that's the case, nós temos uma solução sensata para isso! 
+
+		Você pode reportar bugs em nosso site oficial, bem aqui: skef.it/report
+		Caso você reporte um bug que julguemos crítica, seu nome será apresentado como contribuidor da linguagem
