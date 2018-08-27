@@ -35,7 +35,12 @@ void __parse__(){
             exit(1);
         }
 
+        if ( strcmp("print", _LineFunction_) == 0 ){
+            puts(_LineAUX_);
+            _skf_print_(_LineAUX_, _LineCounter_);
+        }
+
     }
-    free(_LineAUX_);
+    //free(_LineAUX_);
     //free(_LineFunction_);
 }
