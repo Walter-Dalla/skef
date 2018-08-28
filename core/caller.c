@@ -28,6 +28,9 @@ void __parse__(){
         }
 
         _LineAUX_ = _RemoveSpace_init_(_LineAUX_);
+
+        if ( *_LineAUX_ == '\n' ){ continue; }
+
         _LineFunction_ = _Identify_FunctionCall_(_LineAUX_);
 
         if ( strcmp("[NAME_NOT_FOUND]", _LineFunction_) == 0 ){
@@ -36,7 +39,6 @@ void __parse__(){
         }
 
         if ( strcmp("print", _LineFunction_) == 0 ){
-            puts(_LineAUX_);
             _skf_print_(_LineAUX_, _LineCounter_);
         }
 

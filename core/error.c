@@ -18,6 +18,12 @@ void _skf_error_(int __err_number__, char *__err_line__, char *__filename__, int
             fprintf(stdout, "\n    ┌─[ERROR:%d]: In file: \"%s\", there is a name not defined\n", __line_num__, __filename__);
             fprintf(stdout, "    └─────► '%s'\n\n", __err_line__);
             return;
+        
+        case 3:
+            fprintf(stdout, "\n    ┌─[ERROR:%d]: In file: \"%s\", there is an invalid syntax\n", __line_num__, __filename__);
+            fprintf(stdout, "    └─────► '%s'\n\n", __err_line__);
+            return;
+
 
         default:
             printf("[ERROR]: An strange error has occured\n");
