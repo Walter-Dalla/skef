@@ -6,13 +6,13 @@
 #include "includes/declare.h"
 
 void _ExtractString_(int _InitPCall_, char* __string__, int __line__){
-    char *_SkfPrintableString_ = malloc(strlen(__string__));
+    char *_SkfPrintableString_ = calloc(strlen(__string__), sizeof(char *));
     int i=1, n=2, cont=0, _SkfParsedSize_=0;
 
     while (1){
         if ( __string__[_InitPCall_+i] == '"' ){
             while(1){
-                puts(_SkfPrintableString_);
+              
                 if ( __string__[_InitPCall_ + n] == '"'){
                     if ( __string__[(_InitPCall_+n)-1] == '\\' ){
                         strcat(_SkfPrintableString_, "\""); n++; continue;
