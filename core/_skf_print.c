@@ -5,6 +5,11 @@
 
 #include "includes/declare.h"
 
+void _PrintParsedString_(char *_SkfPrintableString_){
+
+}
+
+
 void _ExtractString_(int _InitPCall_, char* __string__, int __line__){
     char *_SkfPrintableString_ = calloc(strlen(__string__), sizeof(char *));
     int i=1, n=2, cont=0, _SkfParsedSize_=0;
@@ -22,8 +27,9 @@ void _ExtractString_(int _InitPCall_, char* __string__, int __line__){
                         memcpy(&_SkfPrintableString_[_SkfParsedSize_], "\n", 1);
                         write(1, _SkfPrintableString_, _SkfParsedSize_+2);
                         free(_SkfPrintableString_);
-                        return;
+
                         // _PrintParsedString_();
+                        return;
                     }
                 }
                 
