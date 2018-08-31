@@ -13,7 +13,7 @@ char *_RemoveSpace_init_(char *string){
 
 int _Confirm_Identify_FunctionCall_(char *_String_, char *_StringMacro_){
     int i=0;
-    int _StringSize_ = strlen(_String_);
+    //int _StringSize_ = strlen(_String_);
     int _MacroSize_ = strlen(_StringMacro_);
     while( i < _MacroSize_ ){
 

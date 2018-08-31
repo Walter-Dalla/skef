@@ -14,5 +14,5 @@ int main(int argc, char *argv[]){
     // Setting values
     f = argv[1];
 
-    if ( argv[1] == NULL || _check_f_exist_(f) != 1 ){ _skf_error_(1, "", "", 0); } else{ __parse__(); }
+    if ( argv[1] == NULL || !_check_f_exist_(f) ){ _skf_error_(1, "", "", 0); } else{ __parse__(); }
 }

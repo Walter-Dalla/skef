@@ -3,6 +3,12 @@
 #include <string.h>
 #include "includes/declare.h"
 
+typedef struct {
+    char* _LineAUX_;
+    char* _LineFunction_;
+    int _LineCounter_;
+} Skf_FileObject;
+
 void __parse__(){
 
     fp = fopen(f, "r");
@@ -10,39 +16,45 @@ void __parse__(){
     _FileSize_ = ftell(fp);
     fseek(fp, 0L, SEEK_SET);
 
+    Skf_FileObject *FileObject = (Skf_FileObject*)malloc(2*_FileSize_);
+
+    FileObject->_LineAUX_ = (char*)malloc(2*_FileSize_);
+    FileObject->_LineFunction_ = (char*)malloc(2*_FileSize_);
+    FileObject->_LineCounter_ = 0;
+
     // _check_first_()
 
-    char *_LineAUX_ = malloc(2*_FileSize_);
-    char *_LineFunction_ = malloc(2*_FileSize_);
+    //char *_LineAUX_ = malloc(2*_FileSize_);
+    //char *_LineFunction_ = malloc(2*_FileSize_);
 
-    while ( fgets(_LineAUX_, 2*_FileSize_, fp) != NULL ){
-        _LineCounter_ ++;
+    while ( fgets(FileObject->_LineAUX_, 2*_FileSize_, fp) != NULL ){
+        FileObject->_LineCounter_ ++;
 
-        if ( *_LineAUX_ == '\0' || *_LineAUX_ == '\n' ){
+        if ( *FileObject->_LineAUX_ == '\0' || *FileObject->_LineAUX_ == '\n' ){
             continue;
         }
 
-        if ( *_LineAUX_ == EOF ){
-            free(_LineAUX_);
+        if ( *FileObject->_LineAUX_ == EOF ){
+            free(FileObject->_LineAUX_);
             exit(0);
         }
 
-        _LineAUX_ = _RemoveSpace_init_(_LineAUX_);
+        FileObject->_LineAUX_ = _RemoveSpace_init_(FileObject->_LineAUX_);
 
-        if ( *_LineAUX_ == '\n' ){ continue; }
+        if ( *FileObject->_LineAUX_ == '\n' ){ continue; }
 
-        _LineFunction_ = _Identify_FunctionCall_(_LineAUX_);
+        FileObject->_LineFunction_ = _Identify_FunctionCall_(FileObject->_LineAUX_);
 
-        if ( strcmp("[NAME_NOT_FOUND]", _LineFunction_) == 0 ){
-            _skf_error_(2, _LineAUX_, f, _LineCounter_);
+        if ( strcmp("[NAME_NOT_FOUND]", FileObject->_LineFunction_) == 0 ){
+            _skf_error_(2, FileObject->_LineAUX_, f, FileObject->_LineCounter_);
             exit(1);
         }
 
-        if ( strcmp("print", _LineFunction_) == 0 ){
-            _skf_print_(_LineAUX_, _LineCounter_);
+        if ( strcmp("print", FileObject->_LineFunction_) == 0 ){
+            _skf_print_(FileObject->_LineAUX_, FileObject->_LineCounter_);
         }
 
     }
-    //free(_LineAUX_);
-    //free(_LineFunction_);
+    free(FileObject->_LineAUX_);
+    //free(FileObject->_LineFunction_);
 }

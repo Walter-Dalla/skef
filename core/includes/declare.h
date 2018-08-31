@@ -7,7 +7,7 @@
 
     FILE *fp;
 
-    int _LineCounter_;
+    //int _LineCounter_;
     int _FileSize_;
 
 // All 'core/' function declaration
