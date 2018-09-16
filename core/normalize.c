@@ -3,7 +3,7 @@
 #include <string.h>
 #include "includes/declare.h"
 
-char *_CoreFunctions_[] = {"print", "echo"};
+char *_CoreFunctions_[] = {"print", "pass"};
 
 char *_RemoveSpace_init_(char *string){
     while(1){
@@ -13,7 +13,6 @@ char *_RemoveSpace_init_(char *string){
 
 int _Confirm_Identify_FunctionCall_(char *_String_, char *_StringMacro_){
     int i=0;
-    //int _StringSize_ = strlen(_String_);
     int _MacroSize_ = strlen(_StringMacro_);
     while( i < _MacroSize_ ){
 

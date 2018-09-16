@@ -1,8 +1,7 @@
-#include <stdio.h>
-#include "includes/declare.h"
+#include "includes/includes.h"
 
 // [FUNCTION]: Check file existence
-int _check_f_exist_(char *filename){
+int _CheckFileExistence_(char *filename){
     FILE *__check_file__;
 
     if ( (__check_file__ = fopen(filename, "r")) ){

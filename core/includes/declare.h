@@ -12,16 +12,16 @@
 
 // All 'core/' function declaration
 
-void _skf_error_(int __err_number__, char *__err_line__, char *__filename__, int __line_num__);
+void __skf_error__(int __err_number__, char *__err_line__, char *__filename__, int __line_num__);
 void __parse__();
 void clear();
 
-int _check_f_exist_(char *filename);
+int _CheckFileExistence_(char *filename);
 
 char *_RemoveSpace_init_(char *string);
 char *_Identify_FunctionCall_(char *string);
 
 // stdskf
-void _skf_print_(char *__string__, int __line__);
+void __SKF_print__(char *__string__, int __line__);
 
 #endif

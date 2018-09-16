@@ -1,13 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
-#include "includes/declare.h"
-
-void _PrintParsedString_(char *_SkfPrintableString_){
-
-}
+#include "includes/includes.h"
 
 
 void _ExtractString_(int _InitPCall_, char* __string__, int __line__){
@@ -42,12 +33,16 @@ void _ExtractString_(int _InitPCall_, char* __string__, int __line__){
             continue;
         }
 
-        else { /* _skf_FunctionCall_() */ _skf_error_(3, __string__, f, __line__); exit(1); }
+        else { /* _skf_FunctionCall_() */ __skf_error__(3, __string__, f, __line__); exit(1); }
     }
 }
 
 
-void _skf_print_(char *__string__, int __line__){
+void __SKF_print__(char *__string__, int __line__){
+
+
+    // struct __object_parse __printer;
+    // __printer = __extract_data__();
 
     int i = 1;
 
@@ -61,7 +56,7 @@ void _skf_print_(char *__string__, int __line__){
             break;
         }
         else{
-            _skf_error_(2, __string__, f, __line__);
+            __skf_error__(2, __string__, f, __line__);
             exit(1);
         }
     }

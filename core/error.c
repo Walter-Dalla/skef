@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "includes/declare.h"
 
-void _skf_error_(int __err_number__, char *__err_line__, char *__filename__, int __line_num__){
+void __skf_error__(int __err_number__, char *__err_line__, char *__filename__, int __line_num__){
 
     switch (__err_number__){
         case 1:

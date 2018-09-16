@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "includes/declare.h"
+#include "includes/includes.h"
 
 typedef struct {
     char* _LineAUX_;
@@ -46,12 +43,14 @@ void __parse__(){
         FileObject->_LineFunction_ = _Identify_FunctionCall_(FileObject->_LineAUX_);
 
         if ( strcmp("[NAME_NOT_FOUND]", FileObject->_LineFunction_) == 0 ){
-            _skf_error_(2, FileObject->_LineAUX_, f, FileObject->_LineCounter_);
+            __skf_error__(2, FileObject->_LineAUX_, f, FileObject->_LineCounter_);
             exit(1);
         }
 
         if ( strcmp("print", FileObject->_LineFunction_) == 0 ){
-            _skf_print_(FileObject->_LineAUX_, FileObject->_LineCounter_);
+            __SKF_print__(FileObject->_LineAUX_, FileObject->_LineCounter_);
+            //__
+            continue;
         }
 
     }
