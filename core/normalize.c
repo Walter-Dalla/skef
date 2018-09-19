@@ -1,16 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "includes/declare.h"
+#include "includes/includes.h"
 
 char *_CoreFunctions_[] = {"print", "pass"};
 
+
+// This function removes adictional spaces from skf file
 char *_RemoveSpace_init_(char *string){
     while(1){
         if ( string[0] == ' ' || string[0] == '\t' ){ string++; } else { return string; }
     }
 }
 
+// This function just confirm if the last identifier is true
 int _Confirm_Identify_FunctionCall_(char *_String_, char *_StringMacro_){
     int i=0;
     int _MacroSize_ = strlen(_StringMacro_);
@@ -27,6 +27,7 @@ int _Confirm_Identify_FunctionCall_(char *_String_, char *_StringMacro_){
     }
 }
 
+// This function ident what function the program is calling
 char *_Identify_FunctionCall_(char *string){
 
     int n = sizeof(_CoreFunctions_)/sizeof(_CoreFunctions_[0]);
@@ -51,7 +52,6 @@ char *_Identify_FunctionCall_(char *string){
         else{
             continue;
         }    
-        //return "[NAME_NOT_FOUND]";
     }
     return "[NAME_NOT_FOUND]";
 }

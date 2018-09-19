@@ -1,3 +1,10 @@
+/*
+
+    aux.c -> This file contais all auxiliary parsing functions from skef
+
+~ Gabriel Julio dos Santos
+*/
+
 #include "includes/includes.h"
 
 // [FUNCTION]: Check file existence

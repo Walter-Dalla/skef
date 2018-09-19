@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+
+
 typedef struct __flist{
 
     char *__VarName__;
@@ -10,10 +13,6 @@ typedef struct __flist{
     struct __flist *next;
 
 } __Skf_FunctionList__;
-
-//__Skf_FunctionList__ *__VarList__ = NULL;
-
-
 
 int __IsAlreadyDef__(__Skf_FunctionList__ *__List__, char* __VarName){
 
@@ -87,8 +86,6 @@ __Skf_FunctionList__ *__replace__(__Skf_FunctionList__ *__List__, char *__VarNam
 
 __Skf_FunctionList__ *__insert__(__Skf_FunctionList__ *__List__, char *__VarName, char* __VarType, char* __VarData){
 
-    //if ( __IsAlreadyDef__(__List__, __VarName, __VarData, __VarType) ){ return; }
-
     __Skf_FunctionList__ *__NewVar__ = (__Skf_FunctionList__*) malloc(1024);
 
     __NewVar__->__VarName__ = malloc(1024);
@@ -147,7 +144,10 @@ int main(){
     __Skf_FunctionList__ *__VarList__ = NULL;
     __VarList__ = ____VarAlocation(__VarList__, "nome", "str", "rulio", 0);
     __VarList__ = ____VarAlocation(__VarList__, "nome", "str", "sdsd", 1);
-    __VarList__ = ____VarAlocation(__VarList__, "nome", "int", "23232", 1);
+    __VarList__ = ____VarAlocation(__VarList__, "nome", "str", "23232", 1);
+    __VarList__ = ____VarAlocation(__VarList__, "nome", "str", "eita", 1);
+    __VarList__ = ____VarAlocation(__VarList__, "n1", "int", "2323", 0);
+
 
     
     __Show__(__VarList__);

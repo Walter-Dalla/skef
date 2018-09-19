@@ -7,5 +7,6 @@
 #include <string.h>
 #include <unistd.h>
 #include "declare.h"
+#include "skfio.h"
 
 #endif
