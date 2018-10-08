@@ -1,0 +1,4 @@
+struct ____SKFAPIN__STRUCT__data ____SKFAPIN__OBJ__string(char *__str);
+    Essa função retorná um struct com todos os structs dentro. Ela inserirá os dados de retorno
+    no struct referente a ela, no caso: "____SKFAPIN__STRUCT__string".
+

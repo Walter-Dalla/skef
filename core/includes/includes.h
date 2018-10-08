@@ -8,5 +8,6 @@
 #include <unistd.h>
 #include "declare.h"
 #include "skfio.h"
+#include "skfapin.h"
 
 #endif

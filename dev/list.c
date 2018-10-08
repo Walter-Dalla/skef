@@ -2,9 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
-
-
 typedef struct __flist{
 
     char *__VarName__;
@@ -50,7 +47,6 @@ __Skf_FunctionList__ *__concat__(__Skf_FunctionList__ *__List__, char *__VarName
             if ( strcmp(aux->__VarName__, __VarName) == 0 ) {
                 aux->__VarData__ = (char*) realloc(aux->__VarData__, 2048);
                 strcat(aux->__VarData__, __VarData);
-                //strcpy(aux->__VarType__, __VarType);
                 continue;
             }
             else{
@@ -69,8 +65,6 @@ __Skf_FunctionList__ *__replace__(__Skf_FunctionList__ *__List__, char *__VarNam
 
         if ( aux->__VarName__[0] == __VarName[0] ){
             if ( strcmp(aux->__VarName__, __VarName) == 0 ){
-                //strcpy(__List__->__VarData__, __VarData);
-                //strcpy(__List__->__VarType__, __VarType);
                 strcpy(aux->__VarData__, __VarData);
                 strcpy(aux->__VarType__, __VarType);
                 continue;
@@ -141,16 +135,19 @@ __Skf_FunctionList__ *____VarAlocation(__Skf_FunctionList__ *__VarList__, char *
 
 int main(){
 
+    // __var()
+
     __Skf_FunctionList__ *__VarList__ = NULL;
-    __VarList__ = ____VarAlocation(__VarList__, "nome", "str", "rulio", 0);
+    /*__VarList__ = ____VarAlocation(__VarList__, "nome", "str", "rulio", 0);
     __VarList__ = ____VarAlocation(__VarList__, "nome", "str", "sdsd", 1);
     __VarList__ = ____VarAlocation(__VarList__, "nome", "str", "23232", 1);
     __VarList__ = ____VarAlocation(__VarList__, "nome", "str", "eita", 1);
-    __VarList__ = ____VarAlocation(__VarList__, "n1", "int", "2323", 0);
+    __VarList__ = ____VarAlocation(__VarList__, "n1", "int", "2323", 0);*/
 
 
-    
+
     __Show__(__VarList__);
+    
     free(__VarList__);
 
 

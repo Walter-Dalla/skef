@@ -1,0 +1,34 @@
+mark comp1(){
+
+    if 2 > 1{
+        print("2 > 1")
+    }
+    else{
+        print("2 < 1")
+    }
+
+}
+
+mark comp2(){
+
+    if 2 > 1 print("true") else print("false")
+
+}
+
+mark comp3(){
+
+    print("true") if 2 > 1 else print("false")
+
+}
+
+mark comp4(){
+
+    if ( 2 > 1 ){ print("true") }; else{ print("false") }
+
+}
+
+mark comp5(){
+
+    print("true") if ( 2 > 1 && 3 > 2 ) else print("false")
+
+}

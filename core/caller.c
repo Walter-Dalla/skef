@@ -51,8 +51,13 @@ void __parse__(){
             exit(1);
         }
 
-        if ( strcmp("print", FileObject->_LineFunction_) == 0 ){
+        else if ( strcmp("print", FileObject->_LineFunction_) == 0 ){
             //____SKF_print_(FileObject->_LineAUX_, FileObject->_LineCounter_);
+            continue;
+        }
+
+        else if ( strcmp("var", FileObject->_LineFunction_) == 0 ){
+            //____SKF_var_(FileObject->_LineAUX_, FileObject->_LineCounter_);
             continue;
         }
 
